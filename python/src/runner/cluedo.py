@@ -35,6 +35,21 @@ class Room:
               + ", floor type: " + self.floorType)
 
 
+class Weapon:
+    def __init__(self, designation, weight, length, killingType):
+        super(Weapon, self).__init__()
+        self.designation = designation
+        self.weight = weight
+        self.length = length
+        self.killingType = killingType
+
+    def print(self):
+        print("designation: " + self.designation
+              + ", weight: " + str(self.weight)
+              + ", length: " + str(self.length)
+              + ", killing type: " + self.killingType)
+
+
 if __name__ == "__main__":
     print("hello world")
 
