@@ -61,6 +61,7 @@ class GameLogic:
 
     def guess(self, murder, murderWeapon, murderRoom):
         correct = 0
+        # Check if inputs are correct
         if murder == self.murder:
             correct += 1
         if murderWeapon == self.murderWeapon:
@@ -77,6 +78,7 @@ def play():
     print("You have 5 guesses to win the game!")
     i = 5
     while i > 0:
+        # Read user input
         print("\nMurder: ", end='')
         murder = int(input())
         print("Murder weapon: ", end='')
@@ -85,6 +87,7 @@ def play():
         murderRoom = int(input())
 
         correct = gameLogic.guess(murder, murderWeapon, murderRoom)
+        # Check if won
         if correct == 3:
             print("You guessed all 3 correctly!")
             print("Game WON!")
@@ -98,11 +101,13 @@ def play():
 
     print("\nPlay again? (j/n)", end='')
     again = input()
+    # Recursion to play again
     if again == 'j' or again == 'J':
         play()
 
 
 if __name__ == "__main__":
+    # Create game objects
     persons = [
         Person("Scarlett", "Miss", 25, "Blonde Haare"),
         Person("Mustard", "Colonel", 55, "Schnurrbart"),
@@ -132,22 +137,23 @@ if __name__ == "__main__":
     ]
 
     print("########################################################################")
-
+    # Print all persons
     print("Persons:")
     for i in range(len(persons)):
         print(str(i) + " ", end='')
         persons[i].print()
-
+    # Print all weapons
     print("\nWeapons:")
     for i in range(len(weapons)):
         print(str(i) + " ", end='')
         weapons[i].print()
-
+    # Print all rooms
     print("\nRooms:")
     for i in range(len(rooms)):
         print(str(i) + " ", end='')
         rooms[i].print()
 
     print("########################################################################")
+    # Start game
     play()
     print("\nBye!")
