@@ -16,6 +16,25 @@ class Person:
               + ", characteristic: " + self.characteristic)
 
 
+class Room:
+    def __init__(self, designation, width, height, numberOfWindows, numberOfDoors, floorType):
+        super(Room, self).__init__()
+        self.designation = designation
+        self.width = width
+        self.height = height
+        self.numberOfWindows = numberOfWindows
+        self.numberOfDoors = numberOfDoors
+        self.floorType = floorType
+
+    def print(self):
+        print("designation: " + self.designation
+              + ", width: " + str(self.width)
+              + ", height: " + str(self.height)
+              + ", number of windows: " + str(self.numberOfWindows)
+              + ", number of doors: " + str(self.numberOfDoors)
+              + ", floor type: " + self.floorType)
+
+
 if __name__ == "__main__":
     print("hello world")
 
