@@ -103,5 +103,51 @@ def play():
 
 
 if __name__ == "__main__":
-    print("hello world")
+    persons = [
+        Person("Scarlett", "Miss", 25, "Blonde Haare"),
+        Person("Mustard", "Colonel", 55, "Schnurrbart"),
+        Person("White", "Miss", 50, "Kochmütze"),
+        Person("Plum", "Professor", 55, "Brille"),
+        Person("Green", "Pastor", 60, "Glatze"),
+        Person("Peacock", "Miss", 65, "Diadem")
+    ]
+    weapons = [
+        Weapon("Dolch", 250, 15, "erstechen"),
+        Weapon("Kerzenständer", 500, 45, "erschlagen"),
+        Weapon("Rohr", 450, 35, "erschlagen"),
+        Weapon("Seil", 400, 1500, "erdrosseln"),
+        Weapon("Rohrzange", 800, 50, "erschlagen"),
+        Weapon("Pistole", 450, 40, "erschiessen")
+    ]
+    rooms = [
+        Room("Halle", 25, 25, 0, 3, "Platten"),
+        Room("Lounge", 15, 15, 5, 1, "Teppich"),
+        Room("Essraum", 20, 20, 4, 2, "Parkett"),
+        Room("Küche", 25, 30, 15, 4, "Platten"),
+        Room("Ballsaal", 100, 5, 8, 2, "Parkett"),
+        Room("Musikzimmer", 25, 5, 10, 1, "Platten"),
+        Room("Billiardzimmer", 25, 4, 6, 2, "Parkett"),
+        Room("Bibliothek", 40, 4, 4, 2, "Teppich"),
+        Room("Studierzimmer", 20, 5, 5, 1, "Teppich")
+    ]
 
+    print("########################################################################")
+
+    print("Persons:")
+    for i in range(len(persons)):
+        print(str(i) + " ", end='')
+        persons[i].print()
+
+    print("\nWeapons:")
+    for i in range(len(weapons)):
+        print(str(i) + " ", end='')
+        weapons[i].print()
+
+    print("\nRooms:")
+    for i in range(len(rooms)):
+        print(str(i) + " ", end='')
+        rooms[i].print()
+
+    print("########################################################################")
+    play()
+    print("\nBye!")
