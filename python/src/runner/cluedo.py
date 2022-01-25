@@ -50,6 +50,26 @@ class Weapon:
               + ", killing type: " + self.killingType)
 
 
+class GameLogik:
+    def __init__(self):
+        super(GameLogik, self).__init__()
+
+    def initialise(self, persons, weapons, rooms):
+        self.murder = randint(0, len(persons))
+        self.murderWeapon = randint(0, len(weapons))
+        self.murderRoom = randint(0, len(rooms))
+
+    def guess(self, murder, murderWeapon, murderRoom):
+        correct = 0
+        if murder == self.murder:
+            correct += 1
+        if murderWeapon == self.murderWeapon:
+            correct += 1
+        if murderRoom == self.murderRoom:
+            correct += 1
+        return correct
+
+
 if __name__ == "__main__":
     print("hello world")
 
