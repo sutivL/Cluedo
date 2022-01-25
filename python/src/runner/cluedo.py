@@ -50,9 +50,9 @@ class Weapon:
               + ", killing type: " + self.killingType)
 
 
-class GameLogik:
+class GameLogic:
     def __init__(self):
-        super(GameLogik, self).__init__()
+        super(GameLogic, self).__init__()
 
     def initialise(self, persons, weapons, rooms):
         self.murder = randint(0, len(persons))
@@ -68,6 +68,38 @@ class GameLogik:
         if murderRoom == self.murderRoom:
             correct += 1
         return correct
+
+
+def play():
+    gameLogic = GameLogic()
+    gameLogic.initialise(persons, weapons, rooms)
+    print("________________________________________________________________________")
+    print("You have 5 guesses to win the game!")
+    i = 5
+    while i > 0:
+        print("\nMurder: ", end='')
+        murder = int(input())
+        print("Murder weapon: ", end='')
+        murderWeapon = int(input())
+        print("Murder room: ", end='')
+        murderRoom = int(input())
+
+        correct = gameLogic.guess(murder, murderWeapon, murderRoom)
+        if correct == 3:
+            print("You guessed all 3 correctly!")
+            print("Game WON!")
+            break
+        else:
+            i -= 1
+            print("You have guessed " + str(correct) + " right, try again!")
+            print("You have " + str(i) + " tries left.")
+            if i == 0:
+                print("Game LOSE!")
+
+    print("\nPlay again? (j/n)", end='')
+    again = input()
+    if again == 'j' or again == 'J':
+        play()
 
 
 if __name__ == "__main__":
